@@ -1,0 +1,25 @@
+{
+  "name": "starWarsApi",
+  "version": "1.0.0",
+  "description": "Api in nodeJs for crud.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Willtavares/starWars-Api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Willtavares/starWars-Api/issues"
+  },
+  "homepage": "https://github.com/Willtavares/starWars-Api#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9"
+  }
+}
