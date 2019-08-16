@@ -5,18 +5,9 @@ const request = require('request')
 
 const router = express.Router()
 
-router.get('/api', async (req, res) => {
-    console.log("'/api' call");
-    try {
-        request('https://swapi.co/api/films/1/', function (error, response, body) {
-          res.status(200).send(body)
-    });
-    } catch (error) {
-            return res.status(400).send({ error: 'Error ao procurar API' });
-    }
-  });
 
-router.get('/', async(req, res) => {
+
+router.get('/list', async(req, res) => {
     try {
         const data = await Planets.find()
             return res.status(200).send(data)
@@ -27,7 +18,7 @@ router.get('/', async(req, res) => {
 
 })
 
-router.post('/register', async(req, res) => {
+router.post('/register/planet', async(req, res) => {
     const { name } = req.body
     try {
         if (await Planets.findOne({ name })) {
@@ -41,7 +32,7 @@ router.post('/register', async(req, res) => {
     }
 })
 
-router.get('/name/:name', async (req, res) => {
+router.get('/find/:name', async (req, res) => {
     const name = {name: req.params.name}
     try {
         if (await Planets.findOne(name) == null) {
@@ -55,7 +46,7 @@ router.get('/name/:name', async (req, res) => {
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/find/:id', async (req, res) => {
     const id = {_id: req.params.id}
     try {
         if (await Planets.findOne(id) == null) {
@@ -85,4 +76,4 @@ router.delete('/delete/:id', async(req, res) => {
     }
 })
 
-module.exports = app => app.use(router)
+module.exports = app => app.use('/planet',router)
