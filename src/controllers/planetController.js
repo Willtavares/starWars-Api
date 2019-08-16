@@ -18,7 +18,7 @@ router.get('/list', async(req, res) => {
 
 })
 
-router.post('/register/planet', async(req, res) => {
+router.post('/register', async(req, res) => {
     const { name } = req.body
     try {
         if (await Planets.findOne({ name })) {
@@ -32,7 +32,7 @@ router.post('/register/planet', async(req, res) => {
     }
 })
 
-router.get('/find/:name', async (req, res) => {
+router.get('/findname/:name', async (req, res) => {
     const name = {name: req.params.name}
     try {
         if (await Planets.findOne(name) == null) {
@@ -46,7 +46,7 @@ router.get('/find/:name', async (req, res) => {
     }
 });
 
-router.get('/find/:id', async (req, res) => {
+router.get('/findid/:id', async (req, res) => {
     const id = {_id: req.params.id}
     try {
         if (await Planets.findOne(id) == null) {

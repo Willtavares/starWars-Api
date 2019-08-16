@@ -1,5 +1,5 @@
 {
-  "name": "starWarsApi",
+  "name": "starwarsapi",
   "version": "1.0.0",
   "description": "Api in nodeJs for crud.",
   "main": "index.js",
